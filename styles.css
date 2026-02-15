@@ -506,14 +506,64 @@ h1 span {
   text-underline-offset: 2px;
 }
 
-.policy-card {
-  margin-top: 1.3rem;
-  padding: 1.2rem;
+body.modal-open {
+  overflow: hidden;
+}
+
+.policy-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: none;
+}
+
+.policy-modal.open {
+  display: block;
+}
+
+.policy-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 31, 24, 0.52);
+  backdrop-filter: blur(2px);
+}
+
+.policy-modal-dialog {
+  position: relative;
+  width: min(980px, calc(100% - 1.4rem));
+  max-height: calc(100svh - 1.8rem);
+  margin: 0.9rem auto;
+  padding: 1rem 1rem 1.1rem;
+  overflow: auto;
+  border-radius: 14px;
+}
+
+.policy-modal-close {
+  position: sticky;
+  top: 0;
+  margin-left: auto;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  border-radius: 999px;
+  font-size: 1.35rem;
+  line-height: 1;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.policy-modal-dialog h2 {
+  margin-top: 0.4rem;
+}
+
+.policy-modal-content {
+  margin-top: 0.9rem;
   display: grid;
   gap: 0.82rem;
 }
 
-.policy-card p {
+.policy-modal-content p {
   margin: 0;
   color: var(--text);
 }
@@ -874,6 +924,13 @@ h1 span {
   .footer-links {
     flex-direction: column;
     gap: 0.45rem;
+  }
+
+  .policy-modal-dialog {
+    width: calc(100% - 1rem);
+    max-height: calc(100svh - 1rem);
+    margin: 0.5rem auto;
+    padding: 0.9rem;
   }
 }
 

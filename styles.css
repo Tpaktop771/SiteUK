@@ -462,6 +462,10 @@ h1 span {
   background: #fcfffc;
 }
 
+.request-form textarea {
+  resize: none;
+}
+
 .request-form input:not([type="checkbox"]):focus,
 .request-form textarea:focus {
   outline: 2px solid rgba(11, 139, 54, 0.25);

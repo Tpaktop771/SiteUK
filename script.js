@@ -34,3 +34,9 @@ const observer = new IntersectionObserver(
 );
 
 revealElements.forEach((element) => observer.observe(element));
+
+const nextField = document.querySelector('input[name="_next"]');
+if (nextField) {
+  const basePath = window.location.pathname.replace(/\/[^/]*$/, '/');
+  nextField.value = `${window.location.origin}${basePath}thanks.html`;
+}

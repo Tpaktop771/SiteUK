@@ -157,10 +157,10 @@
           <textarea name="message" rows="4" placeholder="Опишите вопрос" required></textarea>
         </label>
         <div class="consent-box">
-          <label class="consent-check">
-            <input type="checkbox" name="consent" value="yes" required />
-            <span>Я принимаю условия <a href="#privacy-policy">Политики конфиденциальности</a> и даю согласие на обработку персональных данных.</span>
-          </label>
+          <div class="consent-row">
+            <input id="consent" type="checkbox" name="consent" value="yes" required />
+            <label for="consent" class="consent-text">Я принимаю условия <a href="#privacy-policy">Политики конфиденциальности</a> и даю согласие на обработку персональных данных.</label>
+          </div>
         </div>
         <button type="submit" class="btn btn-primary">Отправить заявку</button>
       </form>

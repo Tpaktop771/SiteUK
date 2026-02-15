@@ -475,23 +475,31 @@ h1 span {
   padding: 0.72rem 0.82rem;
 }
 
-.request-form .consent-check {
+.request-form .consent-row {
   display: flex;
   align-items: flex-start;
   gap: 0.6rem;
-  font-weight: 500;
-  color: var(--muted);
 }
 
-.request-form .consent-check input[type="checkbox"] {
+.request-form .consent-row input[type="checkbox"] {
   margin-top: 0.22rem;
   width: 16px;
   height: 16px;
   accent-color: var(--primary);
   flex: 0 0 16px;
+  cursor: pointer;
 }
 
-.request-form .consent-check a {
+.request-form .consent-text {
+  display: block;
+  margin: 0;
+  font-weight: 500;
+  color: var(--muted);
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+.request-form .consent-text a {
   color: var(--primary-dark);
   font-weight: 700;
   text-decoration: underline;

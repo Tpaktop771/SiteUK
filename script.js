@@ -2,6 +2,8 @@ const menuButton = document.querySelector('.menu-btn');
 const nav = document.querySelector('.site-nav');
 const navLinks = document.querySelectorAll('.site-nav a');
 const revealElements = document.querySelectorAll('.reveal, .stagger-grid');
+const informationList = document.getElementById('information-list');
+const worksList = document.getElementById('works-list');
 
 if (menuButton && nav) {
   menuButton.addEventListener('click', () => {
@@ -16,6 +18,63 @@ if (menuButton && nav) {
       nav.classList.remove('open');
     });
   });
+}
+
+const defaultInformation = [
+  {
+    title: 'Информация обновляется',
+    text: 'Добавьте карточки в файл content-data.js, и они появятся в этом разделе.',
+  },
+];
+
+const defaultWorks = [
+  {
+    title: 'Раздел работ обновляется',
+    description: 'Добавьте карточки в файл content-data.js для отображения выполненных работ.',
+    image: 'assets/logo.jpg',
+    date: 'Актуально',
+  },
+];
+
+const escapeHtml = (value) =>
+  String(value ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+
+const contentData = window.siteContent ?? {};
+const informationItems =
+  Array.isArray(contentData.information) && contentData.information.length > 0 ? contentData.information : defaultInformation;
+const worksItems = Array.isArray(contentData.works) && contentData.works.length > 0 ? contentData.works : defaultWorks;
+
+if (informationList) {
+  informationList.innerHTML = informationItems
+    .map(
+      (item) => `
+        <article class="card info-item stagger-item">
+          <h3>${escapeHtml(item.title)}</h3>
+          <p>${escapeHtml(item.text)}</p>
+        </article>
+      `
+    )
+    .join('');
+}
+
+if (worksList) {
+  worksList.innerHTML = worksItems
+    .map(
+      (item) => `
+        <article class="card work-item stagger-item">
+          <img src="${escapeHtml(item.image || 'assets/logo.jpg')}" alt="${escapeHtml(item.title || 'Выполненные работы')}" loading="lazy" />
+          ${item.date ? `<time class="work-meta">${escapeHtml(item.date)}</time>` : ''}
+          <h3>${escapeHtml(item.title)}</h3>
+          <p>${escapeHtml(item.description)}</p>
+        </article>
+      `
+    )
+    .join('');
 }
 
 const observer = new IntersectionObserver(

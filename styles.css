@@ -376,6 +376,50 @@ h1 span {
   color: var(--muted);
 }
 
+.info-grid,
+.works-grid {
+  margin-top: 1.3rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.info-item,
+.work-item {
+  padding: 1rem;
+}
+
+.info-item h3,
+.work-item h3 {
+  font-size: 1rem;
+  margin-bottom: 0.45rem;
+}
+
+.info-item p,
+.work-item p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.work-item {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.work-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #d8e8db;
+}
+
+.work-meta {
+  color: #1a8f45;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
 .docs-grid {
   margin-top: 1.3rem;
   display: grid;
@@ -805,6 +849,8 @@ body.modal-open {
   }
 
   .service-grid,
+  .info-grid,
+  .works-grid,
   .contacts-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -902,6 +948,8 @@ body.modal-open {
 
   .quick-grid,
   .service-grid,
+  .info-grid,
+  .works-grid,
   .contacts-grid {
     grid-template-columns: 1fr;
   }
@@ -968,6 +1016,8 @@ body.modal-open {
 
   .quick-grid,
   .service-grid,
+  .info-grid,
+  .works-grid,
   .contacts-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

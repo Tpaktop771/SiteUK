@@ -30,6 +30,8 @@
 
       <nav class="site-nav" id="site-nav">
         <a href="#about">О компании</a>
+        <a href="#information">Информация</a>
+        <a href="#works">Наши работы</a>
         <a href="#services">Услуги</a>
         <a href="#contacts">Контакты</a>
       </nav>
@@ -58,6 +60,14 @@
           <a href="#request" class="quick-item">
             <img src="assets/icons/quick-request.svg" alt="" class="item-icon" aria-hidden="true" />
             <span>Подать заявку</span>
+          </a>
+          <a href="#information" class="quick-item">
+            <img src="assets/icons/quick-doc.svg" alt="" class="item-icon" aria-hidden="true" />
+            <span>Информация</span>
+          </a>
+          <a href="#works" class="quick-item">
+            <img src="assets/icons/quick-service.svg" alt="" class="item-icon" aria-hidden="true" />
+            <span>Наши работы</span>
           </a>
           <a href="#contacts" class="quick-item">
             <img src="assets/icons/quick-phone.svg" alt="" class="item-icon" aria-hidden="true" />
@@ -239,6 +249,24 @@
         >Открыть отметку в Яндекс Картах</a>
       </div>
     </section>
+
+    <section id="information" class="section container reveal">
+      <div class="section-head">
+        <p class="eyebrow">Информация</p>
+        <h2>Полезные сведения для жителей</h2>
+      </div>
+      <p class="section-note">Чтобы добавить или изменить контент, отредактируйте файл <strong>content-data.js</strong>.</p>
+      <div id="information-list" class="info-grid stagger-grid"></div>
+    </section>
+
+    <section id="works" class="section container reveal">
+      <div class="section-head">
+        <p class="eyebrow">Наши работы</p>
+        <h2>Выполненные работы и результаты</h2>
+      </div>
+      <p class="section-note">Новые карточки работ добавляются в файл <strong>content-data.js</strong>.</p>
+      <div id="works-list" class="works-grid stagger-grid"></div>
+    </section>
   </main>
 
   <div id="policy-modal" class="policy-modal" aria-hidden="true">
@@ -298,6 +326,7 @@
     </div>
   </footer>
 
+  <script src="content-data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
